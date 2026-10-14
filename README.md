@@ -32,3 +32,4 @@ That writes the X banner, profile image, link card, and post images to `brand/ou
 
 No Anchor program, no deploy scripts, no backend. On-chain reads are added per project as a hook in `hooks/`. See `AGENTS.md`.
 # skaleton
+# skaleton

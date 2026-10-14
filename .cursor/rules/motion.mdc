@@ -1,0 +1,9 @@
+---
+description: Motion rules for landing sections
+globs: ["components/motion/**", "sections/**"]
+---
+
+- Reveals move 24px and fade over 0.6s, and they run once.
+- Only the marquee and the aurora loop. Both stop under `prefers-reduced-motion`.
+- The magnetic pull on buttons is desktop only. Skip it for coarse pointers.
+- A 3D scene replaces the aurora. It never stacks on top of it, and it is lazy loaded.

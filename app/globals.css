@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-aurora: aurora 18s ease-in-out infinite alternate;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes aurora {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(8%, -6%, 0) scale(1.15);
+    }
+    100% {
+      transform: translate3d(-6%, 8%, 0) scale(0.95);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: #0b0d10;
+  --foreground: #f4f6f8;
+  --surface: #14181d;
+  --card: #14181d;
+  --card-foreground: #f4f6f8;
+  --popover: #14181d;
+  --popover-foreground: #f4f6f8;
+  /* Overridden per project from site.accent via the inline style in layout. */
+  --primary: #0052ff;
+  --primary-foreground: #ffffff;
+  --secondary: #1c2229;
+  --secondary-foreground: #f4f6f8;
+  --muted: #1c2229;
+  --muted-foreground: #9aa3ad;
+  --accent: #1c2229;
+  --accent-foreground: #f4f6f8;
+  --destructive: #ef4444;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: var(--primary);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:animate-marquee,
+  .animate-aurora {
+    animation: none !important;
+  }
+}

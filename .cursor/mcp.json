@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"]
+    },
+    "solana-mcp-server": {
+      "url": "https://mcp.solana.com/mcp"
+    }
+  }
+}

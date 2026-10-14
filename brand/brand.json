@@ -1,0 +1,20 @@
+{
+  "name": "__PROJECT_NAME__",
+  "ticker": "TOKEN",
+  "tagline": "One line about what this does.",
+  "accent": "#0052FF",
+  "background": "#0B0D10",
+  "text": "#F4F6F8",
+  "muted": "#9AA3AD",
+  "handle": "@handle",
+  "posts": {
+    "launch": {
+      "headline": "Now live on devnet.",
+      "subline": "Connect a wallet and do the one thing."
+    },
+    "how": {
+      "headline": "Three steps.",
+      "subline": "Connect. Act. See it settle."
+    }
+  }
+}

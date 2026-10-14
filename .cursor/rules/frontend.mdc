@@ -1,0 +1,11 @@
+---
+description: Frontend conventions for farm projects
+globs: ["app/**", "components/**", "sections/**", "lib/**", "hooks/**"]
+---
+
+- Use shadcn components from `components/ui`. Do not create custom buttons, inputs, or cards.
+- Colors come from CSS variables. The accent is `site.accent`, exposed as `--primary`.
+- Import order: react, next, external packages, `@/` imports, relative imports, then `import type`.
+- No `any`. Give exported functions an explicit return type.
+- Motion lives in `components/motion` and must honor `prefers-reduced-motion`.
+- Wallet actions go through `components/wallet/wallet-guard`, which checks the devnet cluster.
